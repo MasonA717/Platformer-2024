@@ -46,6 +46,8 @@ public class LevelParser : MonoBehaviour
             sr.Close();
         }
 
+        int row = 0; 
+        
         // Go through the rows from bottom to top
         while (levelRows.Count > 0)
         {
@@ -58,8 +60,33 @@ public class LevelParser : MonoBehaviour
                 // Todo - Instantiate a new GameObject that matches the type specified by letter
                 // Todo - Position the new GameObject at the appropriate location by using row and column
                 // Todo - Parent the new GameObject under levelRoot
-                column++;
+                if (letter == 'x')
+                {
+                    Vector3 newPos = new Vector3(column, row, 0f);
+                    GameObject newObj = Instantiate(rockPrefab, newPos, Quaternion.identity, environmentRoot);
+                    Transform newTransform = newObj.transform;
+                    newTransform.position = newPos;
+                } else if (letter == 's')
+                {
+                    Vector3 newPos = new Vector3(column, row, 0f);
+                    GameObject newObj = Instantiate(stonePrefab, newPos, Quaternion.identity, environmentRoot);
+                    Transform newTransform = newObj.transform;
+                    newTransform.position = newPos;
+                } else if (letter == 'b')
+                {
+                    Vector3 newPos = new Vector3(column, row, 0f);
+                    GameObject newObj = Instantiate(brickPrefab, newPos, Quaternion.identity, environmentRoot);
+                    Transform newTransform = newObj.transform;
+                    newTransform.position = newPos;
+                } else if (letter == '?')
+                {
+                    Vector3 newPos = new Vector3(column, row, 0f);
+                    GameObject newObj = Instantiate(questionBoxPrefab, newPos, Quaternion.identity, environmentRoot);
+                    Transform newTransform = newObj.transform;
+                    newTransform.position = newPos;
+                }
             }
+            row++;
         }
     }
 
