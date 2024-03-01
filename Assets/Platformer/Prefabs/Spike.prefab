@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2652198492393551391}
   - component: {fileID: 2652198492393551390}
   - component: {fileID: 2652198492393551389}
-  - component: {fileID: 6510942587273062324}
+  - component: {fileID: 3851412871346923606}
   m_Layer: 3
-  m_Name: Brick
-  m_TagString: Brick
+  m_Name: Spike
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 20ed344efdb539c41a7d2795754bb314, type: 2}
+  - {fileID: 2100000, guid: 473c64847ce59ec48969c5e747eea118, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!61 &6510942587273062324
+--- !u!61 &3851412871346923606
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

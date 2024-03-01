@@ -9,6 +9,8 @@ public class LevelParser : MonoBehaviour
     public GameObject brickPrefab;
     public GameObject questionBoxPrefab;
     public GameObject stonePrefab;
+	public GameObject spikePrefab;
+	public GameObject goalPrefab;
     public Transform environmentRoot;
 
     // --------------------------------------------------------------------------
@@ -66,12 +68,6 @@ public class LevelParser : MonoBehaviour
                     GameObject newObj = Instantiate(rockPrefab, newPos, Quaternion.identity, environmentRoot);
                     Transform newTransform = newObj.transform;
                     newTransform.position = newPos;
-                } else if (letter == 's')
-                {
-                    Vector3 newPos = new Vector3(column, row, 0f);
-                    GameObject newObj = Instantiate(stonePrefab, newPos, Quaternion.identity, environmentRoot);
-                    Transform newTransform = newObj.transform;
-                    newTransform.position = newPos;
                 } else if (letter == 'b')
                 {
                     Vector3 newPos = new Vector3(column, row, 0f);
@@ -84,7 +80,26 @@ public class LevelParser : MonoBehaviour
                     GameObject newObj = Instantiate(questionBoxPrefab, newPos, Quaternion.identity, environmentRoot);
                     Transform newTransform = newObj.transform;
                     newTransform.position = newPos;
-                }
+                } else if (letter == 's')
+                {
+                    Vector3 newPos = new Vector3(column, row, 0f);
+                    GameObject newObj = Instantiate(stonePrefab, newPos, Quaternion.identity, environmentRoot);
+                    Transform newTransform = newObj.transform;
+                    newTransform.position = newPos;
+                } else if (letter == 'v')
+				{
+    				Vector3 newPos = new Vector3(column, row, 0f);
+                    GameObject newObj = Instantiate(spikePrefab, newPos, Quaternion.identity, environmentRoot);
+                    Transform newTransform = newObj.transform;
+                    newTransform.position = newPos;
+				} else if (letter == 'g')
+				{
+    				Vector3 newPos = new Vector3(column, row, 0f);
+                    GameObject newObj = Instantiate(goalPrefab, newPos, Quaternion.identity, environmentRoot);
+                    Transform newTransform = newObj.transform;
+                    newTransform.position = newPos;
+				}
+
             }
             row++;
         }
